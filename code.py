@@ -38,7 +38,6 @@ pool = socketpool.SocketPool(wifi.radio)
 
 # Connect to server
 addr = "10.93.48.143"
-#addr = '128.189.212.112'
 port = 443
 ADDR = (addr, port)
 FORMAT = "utf-8"
@@ -102,11 +101,6 @@ while True:
     msg = msg_buf.decode(FORMAT).split()[0]
     if msg:
         print(msg)
-        #print (len(msg))
-        #print(len(str(msg.rstrip()))
-        #print("length is:" f"{len("ON")}")
-        #print(f"{msg == "ON"}")
-        # using strip() to remove leading/trailing whitespace
         if msg == "ON":
             control_devices(True)
         elif msg == "OFF":
@@ -115,7 +109,4 @@ while True:
     dis = read_sonar()
     Photoresistor(dis)
 
-
-
-# Close socket
 
